@@ -19,6 +19,12 @@ jobs:
       run: docker build . --file Dockerfile
       working-directory: nexus
 
+    - uses: raven-oscar/publish-docker-action@master
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: docker.pkg.github.com
+
     - name: build haproxy
       run: docker build . --file Dockerfile
       working-directory: haproxy
