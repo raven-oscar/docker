@@ -19,7 +19,7 @@ jobs:
       run: docker build -t docker.pkg.github.com/raven-oscar/docker/nexus .
       working-directory: nexus
 
-    - uses: docker.pkg.github.com/raven-oscar/docker/nexus
+    - uses: raven-oscar/docker/nexus
       with:
         username: ${{ github.actor }}
         password: ${{ secrets.DOCKER_PASSWORD }}
