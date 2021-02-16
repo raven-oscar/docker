@@ -1,4 +1,4 @@
-FROM registry.service.consul/ubuntu:16.04
+FROM ubuntu:16.04
 
 ENV HAPROXY_VERSION 2.2.6
 ENV HAPROXY_URL http://www.haproxy.org/download/2.2/src/haproxy-2.2.6.tar.gz
