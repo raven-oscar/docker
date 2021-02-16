@@ -14,6 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    
+    - name: build nexus
       run: docker build . --file Dockerfile
       working-directory: nexus
+
+    - name: build haproxy
+      run: docker build . --file Dockerfile
+      working-directory: haproxy
