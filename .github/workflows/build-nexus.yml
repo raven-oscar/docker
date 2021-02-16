@@ -18,12 +18,12 @@ jobs:
     - name: build nexus
       run: docker build -t docker.pkg.github.com/raven-oscar/docker/nexus .
       working-directory: nexus
+      
+    - name: Log into registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
-    - uses: raven-oscar/docker/nexus
-      with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: docker.pkg.github.com
+    - name: push into registry
+      run: docker push docker.pkg.github.com/raven-oscar/docker/nexus
 
     - name: build haproxy
       run: docker build . --file Dockerfile
