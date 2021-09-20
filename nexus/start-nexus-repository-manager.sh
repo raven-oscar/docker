@@ -5,4 +5,4 @@
 chown -R nexus:nexus /nexus-data/
 rm -rf /nexus-data/lock
 cd /opt/sonatype/nexus
-su - nexus -c "exec ./bin/nexus run"
+exec ./bin/nexus run
