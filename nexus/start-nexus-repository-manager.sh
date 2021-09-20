@@ -4,4 +4,4 @@
 #
 rm -rf /nexus-data/lock
 cd /opt/sonatype/nexus
-su - nexus -c "/bin/bash /opt/sonatype/nexus/bin/nexus run"
+exec ./bin/nexus run
