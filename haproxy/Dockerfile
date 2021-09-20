@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
 ENV HAPROXY_VERSION 2.2.6
 ENV HAPROXY_URL http://www.haproxy.org/download/2.2/src/haproxy-2.2.6.tar.gz
